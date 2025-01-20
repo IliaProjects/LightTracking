@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">LightTracking</string>
+
+
+    <string name="email_text">Емайл</string>
+    <string name="password_text">Пароль</string>
+    <string name="remember">Запомнить</string>
+    <string name="email_required">Укажите емайл</string>
+    <string name="pwd_required">Укажите пароль</string>
+    <string name="signin">ВХОД</string>
+
+
+    <string name="button_calls">ЗВОНКИ</string>
+    <string name="button_messages">СМС</string>
+    <string name="button_GPSTracking">GPS</string>
+    <string name="button_Exit">ВЫХОД</string>
+
+    <string name="title_list_calls">Список звонков</string>
+    <string name="title_list_messages">Список сообщений</string>
+
+    <string name="all">ВСЕ</string>
+    <string name="incomming">ВХОДЯЩИЕ</string>
+    <string name="outgoing">ИСХОДЯЩИЕ</string>
+    <string name="missed">ПРОПУЩЕННЫЕ</string>
+
+
+    <string name="search">Поиск</string>
+
+</resources>

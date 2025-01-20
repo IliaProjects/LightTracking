@@ -1,0 +1,40 @@
+﻿@using LightTracking.Models
+
+@model List<Sms>
+
+
+<table class="table" style="margin-top:30px;">
+
+        <!--Table head-->
+        <thead class="mdb-color primary-color-dark">
+            <tr class="text-white" style="color:white;">
+                <th>Контакт</th>
+                <th>№ телефона</th>
+                <th>Дата</th>
+                <th>Текст СМС</th>
+                @if (ViewBag.ShowTypeCall == true)
+                {
+                    <th>Тип</th>
+                }
+            </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            @foreach (var sms in Model)
+            {
+                <tr>
+                    <th>@sms.ContacName</th>
+                    <td>@sms.PhoneNumber</td>
+                    <td>@sms.Date</td>
+                    <td>@sms.SmsText</td>
+                    @if (ViewBag.ShowTypeCall == true)
+                    {
+                        <td>@sms.SmsType</td>
+                    }
+                </tr>
+            }
+
+        </tbody>
+        <!--Table body-->
+    </table>

@@ -1,0 +1,62 @@
+1.) Аутентификация
+
+	POST запрос на адрес http://student.rti.md/api/user/login
+	в качестве данных нужно передать в теле POST запроса json строку
+	{ "login":"....", "password":"..."}
+
+	метод возвращает json строку
+  	  {
+	
+    "Token": ...,
+    
+	    "Status": ...,
+    
+            "Error": ...
+          }
+
+2.) Список звонков хранящихся на сервере
+
+	GET запрос на адрес http://student.rti.md/api/call/getcalls
+
+	ПРИМЕР:
+              http://student.rti.md/api/call/getcalls?dateFrom=2017-06-01&dateTo=2017-06-15&token=001cf39f-9aa3-44db-859b-fbe2d570e7ee
+
+метод возвращает json строку
+
+[
+    {"Id": 1012,
+
+        "UserId": 0,
+
+        "ContacName": "Tanner",
+
+        "PhoneNumber": "386-(969)574-1535",
+        
+	"Duration": 621,
+        
+	"Date": "2017-06-01T00:00:00",
+        
+	"CallType": 1
+    },
+    
+      {
+"Id": 1022,
+        
+	"UserId": 0,
+        
+	"ContacName": "Wood",
+        
+	"PhoneNumber": 
+	"62-(885)188-6943",
+        
+	"Duration": 516,
+        
+	"Date": "2017-06-04T00:00:00",
+        
+	"CallType": 0
+    
+	},
+
+.......
+
+]

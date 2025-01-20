@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.user1.lighttracking.activity.MainActivity">
+
+    <Button
+        android:text="@string/button_calls"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@color/colorBtn"
+        android:textColor="@color/colorBg"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="CallsClick"
+        android:id="@+id/btCalls" />
+
+
+    <Button
+        android:text="@string/button_messages"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@color/colorBtn"
+        android:textColor="@color/colorBg"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btCalls"
+        android:layout_marginTop="20dp"
+        android:onClick="MessagesClick"
+        android:id="@+id/btSMS" />
+
+
+    <Button
+        android:text="@string/button_GPSTracking"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@color/colorBtn"
+        android:textColor="@color/colorBg"
+        android:layout_below="@id/btSMS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btGPS" />
+
+    <Button
+        android:text="@string/button_Exit"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@color/colorBtn"
+        android:textColor="@color/colorBg"
+        android:layout_marginTop="21dp"
+        android:id="@+id/btExit"
+        android:onClick="ExitClick"
+        android:layout_below="@+id/btGPS"
+        android:layout_alignLeft="@+id/btGPS"
+        android:layout_alignStart="@+id/btGPS" />
+
+</RelativeLayout>

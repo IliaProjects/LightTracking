@@ -1,0 +1,86 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMap.cshtml";
+}
+
+
+<script>
+
+    var map;
+
+    $(document).ready(function () {
+
+        $('.datepicker').pickadate();        
+
+    });
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 47.025702, lng: 28.830355 },
+            zoom: 3,
+            //mapTypeId: google.maps.MapTypeId.SATELLITE,
+            rotateControl: true
+        });
+
+        var pos = { lat: 47.025702, lng: 28.830355 };
+
+        
+    }
+
+    function ButtonShowClick() {
+
+        $.ajax({
+            type: "POST",
+            url: "/gps/listgpscoordinates",
+            data: {
+                dateFrom: $("#dateFrom").val(),
+                dateTo: $("#dateTo").val()
+            },
+            success: function (data) {
+                for (var x in data) {
+
+                    var item = data[x];
+
+                    new google.maps.Marker({
+                        position: { lat: parseFloat(item.Latitude), lng: parseFloat(item.Longitude) },
+                        map: map,
+                        title: (new Date(parseInt(item.Date.substr(6)))).toString()
+                    });
+
+                }
+            }
+        });
+
+    }
+
+</script>
+
+<!--Panel-->
+<div class="card">
+    <h3 class="card-header primary-color white-text">GPS ТРЕКИНГ</h3>
+    <div class="card-block">
+
+        <form class="form-inline" method="post" action="/call/listcalls">
+            <div class="md-form form-group">
+                <i class="fa fa-calendar prefix active"></i>
+                <input placeholder="начальная дата" type="text" id="dateFrom" name="dateFrom" class="form-control datepicker">
+
+            </div>
+            <div class="md-form form-group">
+                <i class="fa fa-calendar prefix active"></i>
+                <input placeholder="конечная дата" type="text" id="dateTo" name="dateTo" class="form-control datepicker">
+
+            </div>
+
+            <input type="hidden" name="typeCall" id="typeCall" value="0" />
+
+            <button type="button" onclick="ButtonShowClick()" class="btn btn-primary">ПОКАЗАТЬ</button>
+
+
+        </form>
+
+
+    </div>
+</div>
+<!--/.Panel-->
+
+<div id="map"></div>

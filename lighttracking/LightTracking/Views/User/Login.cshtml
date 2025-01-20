@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#login").focus();
+        setTimeout(function () {
+            $("#login_label").addClass("active");
+        }, 200);        
+    });
+
+</script>
+
+<form method="post" action="~/user/login">
+
+    <div class="card" style="width:400px; margin:150px auto;">
+        
+        <div class="card-block">
+            <h3 class="form-header mdb-color darken-3 h2-responsive" style="padding:10px;">Вход в систему</h3>
+
+            <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="text" id="login" name="login" class="form-control">
+                <label id="login_label" for="defaultForm-email">Ваш логин</label>
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-lock prefix grey-text"></i>
+                <input type="password" id="password" name="password" class="form-control">
+                <label for="defaultForm-pass">Пароль</label>
+            </div>
+
+            <div style="text-align:right">
+                <button class="btn mdb-color darken-3">ВОЙТИ</button>
+            </div>
+       </div>
+   </div>
+</form>
+

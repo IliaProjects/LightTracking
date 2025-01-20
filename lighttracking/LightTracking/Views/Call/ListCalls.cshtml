@@ -1,0 +1,40 @@
+﻿@using LightTracking.Models
+
+@model List<Call>
+
+
+<table class="table" style="margin-top:30px;">
+
+        <!--Table head-->
+        <thead class="mdb-color primary-color-dark">
+            <tr class="text-white" style="color:white;">
+                <th>Контакт</th>
+                <th>№ телефона</th>
+                <th>Дата</th>
+                <th>Длительность</th>
+                @if (ViewBag.ShowTypeCall == true)
+                {
+                    <th>Тип</th>
+                }
+            </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            @foreach (var call in Model)
+            {
+                <tr>
+                    <th>@call.ContacName</th>
+                    <td>@call.PhoneNumber</td>
+                    <td>@call.Date</td>
+                    <td>@call.Duration</td>
+                    @if (ViewBag.ShowTypeCall == true)
+                    {
+                        <td>@call.CallType</td>
+                    }
+                </tr>
+            }
+
+        </tbody>
+        <!--Table body-->
+    </table>
