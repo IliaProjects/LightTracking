@@ -4,8 +4,8 @@ This educational project is an application that collects SMS and call logs from 
 
 ### Project Structure
 
-Server Side: Developed on the .NET 2.0 platform.
-Client Side: Written using Android Studio, SDK version 25.
+- Server Side: Developed on the .NET 2.0 platform.
+- Client Side: Written using Android Studio, SDK version 25.
 
 ### Features
 
